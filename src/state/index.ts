@@ -19,7 +19,7 @@ export const initialState: GlobalState = {
   user: null,
   isSeller: false,
   showUserLogin: false,
-  products: [],
+  products: [] as Product[],
   cartItems: {},
   searchQuery: "",
   count: 0,

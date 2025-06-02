@@ -2,6 +2,7 @@
 
 import { useChangeStockBySellerMutation } from "@/state/api";
 import { useAppSelector } from "@/state/redux";
+import Image from "next/image";
 import React from "react";
 import { toast } from "sonner";
 
@@ -45,7 +46,7 @@ const ProductList = () => {
                 <tr key={product.id} className="border-t border-gray-500/20">
                   <td className="md:px-4 pl-2 md:pl-4 py-3 flex items-center space-x-3 truncate">
                     <div className="border border-gray-300 rounded p-2">
-                      <img
+                      <Image
                         src={product.images[0]}
                         alt="Product"
                         className="w-16"

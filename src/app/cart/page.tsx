@@ -43,7 +43,7 @@ const Cart = () => {
   const [placeOrderStripe] = usePlaceOrderStripeMutation();
 
   const getCart = () => {
-    let tempArray = [] as CartItem[];
+    const tempArray = [] as CartItem[];
     for (const key in cartItems) {
       const product = products.find((product) => product.id === key);
 
@@ -130,7 +130,7 @@ const Cart = () => {
     if (isSuccess && addresses.addresses && addresses.addresses.length > 0) {
       setSelectedAddress(addresses.addresses[0]);
     }
-  }, [addresses]);
+  }, [addresses, isSuccess]);
 
   if (!isSuccess) {
     return <div>Loading...</div>;

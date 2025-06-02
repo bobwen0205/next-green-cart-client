@@ -10,6 +10,9 @@ const BestSeller = () => {
     skip: typeof window === "undefined",
   });
   if (!isSuccess) return <>Loading...</>;
+  if (!products || !products.products || products.products.length === 0) {
+    return <p className="text-gray-500">No products available</p>;
+  }
 
   return (
     <div className="mt-16">

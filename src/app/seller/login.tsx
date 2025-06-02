@@ -34,7 +34,7 @@ const SellerLogin = () => {
     if (isSeller) {
       router.push("/seller");
     }
-  }, [isSeller]);
+  }, [isSeller, router]);
 
   return (
     !isSeller && (

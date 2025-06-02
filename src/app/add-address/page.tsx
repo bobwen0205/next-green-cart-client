@@ -75,7 +75,7 @@ const AddAddress = () => {
     if (!user) {
       router.push("/cart");
     }
-  }, []);
+  }, [user, router]);
 
   return (
     <div className="mt-16 pb-16">

@@ -42,7 +42,7 @@ const AppInitializer = () => {
       dispatch(setIsSeller(true));
     }
 
-    if (productsSuccess && productData) {
+    if (productsSuccess && productData.products) {
       dispatch(setProducts(productData.products));
     }
   }, [
