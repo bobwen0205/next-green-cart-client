@@ -1,9 +1,10 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
+import Loading from "./loading";
 
-const Loading = () => {
+const Loader = () => {
   const router = useRouter();
 
   const searchParams = useSearchParams();
@@ -23,10 +24,10 @@ const Loading = () => {
     };
   }, [nextUrl, router]);
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="animate-spin rounded-full h-24 w-24 border-4 border-gray-300 border-t-primary"></div>
-    </div>
+    <Suspense>
+      <Loading />
+    </Suspense>
   );
 };
 
-export default Loading;
+export default Loader;
