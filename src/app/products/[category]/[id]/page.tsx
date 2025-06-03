@@ -7,13 +7,13 @@ import { useAppDispatch, useAppSelector } from "@/state/redux";
 import { Product } from "@/types/prismaTypes";
 import Image from "next/image";
 import Link from "next/link";
-import { useParams, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 
 const ProductDetails = () => {
   const dispatch = useAppDispatch();
   const router = useRouter();
-  const { id } = useParams();
+  const id = usePathname().split("/").pop();
 
   const products = useAppSelector((state) => state.global.products);
   const cartItems = useAppSelector((state) => state.global.cartItems);
