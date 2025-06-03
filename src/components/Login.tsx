@@ -23,7 +23,6 @@ const Login = () => {
       let res;
       if (state === "login") {
         res = await loginUser({ email, password }).unwrap();
-        console.log(res);
       } else {
         res = await registerUser({ name, email, password }).unwrap();
       }
@@ -31,8 +30,6 @@ const Login = () => {
       if (res.success) {
         localStorage.setItem("token", res.token);
         router.push("/");
-        console.log(res.user);
-
         dispatch(setUser(res.user));
         dispatch(toggleShowUserLogin());
       } else {

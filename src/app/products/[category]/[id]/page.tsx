@@ -43,8 +43,6 @@ const ProductDetails = () => {
   // Set thumbnail when product changes
   useEffect(() => {
     if (product) {
-      console.log("Selected product:", product);
-
       setThumbnail(product?.images?.[0]);
     }
   }, [product]);
@@ -141,7 +139,7 @@ const ProductDetails = () => {
                   Add to Cart
                 </button>
               ) : (
-                <div className="flex items-center justify-between gap-2 w-full py-3.5 bg-primary/25 rounded select-none rounded-lg">
+                <div className="flex items-center justify-between gap-2 w-full py-3.5 bg-primary/25 rounded select-none">
                   <button
                     onClick={() => dispatch(removeFromCart(product.id))}
                     className="cursor-pointer text-md px-4 h-full"
