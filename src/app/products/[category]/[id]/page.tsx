@@ -43,6 +43,8 @@ const ProductDetails = () => {
   // Set thumbnail when product changes
   useEffect(() => {
     if (product) {
+      console.log("Selected product:", product);
+
       setThumbnail(product?.images?.[0]);
     }
   }, [product]);
