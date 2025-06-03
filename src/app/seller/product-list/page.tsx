@@ -50,6 +50,8 @@ const ProductList = () => {
                         src={product.images[0]}
                         alt="Product"
                         className="w-16"
+                        width={100}
+                        height={100}
                       />
                     </div>
                     <span className="truncate max-sm:hidden w-full">

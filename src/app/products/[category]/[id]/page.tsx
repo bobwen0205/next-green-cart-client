@@ -74,7 +74,12 @@ const ProductDetails = () => {
                   onClick={() => setThumbnail(image)}
                   className="border max-w-24 border-gray-500/30 rounded overflow-hidden cursor-pointer"
                 >
-                  <Image src={image} alt={`Thumbnail ${index + 1}`} />
+                  <Image
+                    src={image}
+                    alt={`Thumbnail ${index + 1}`}
+                    width={100}
+                    height={100}
+                  />
                 </div>
               ))}
             </div>
@@ -160,7 +165,7 @@ const ProductDetails = () => {
               )}
               <button
                 onClick={() => {
-                  addToCart(product.id);
+                  dispatch(addToCart(product.id));
                   router.push("/cart");
                 }}
                 className="w-full py-3.5 cursor-pointer font-medium bg-primary text-white hover:bg-primary-dull transition rounded-lg"
